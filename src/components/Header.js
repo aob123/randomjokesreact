@@ -1,9 +1,14 @@
-import React from 'react';
+import Logo from "../images/SVG/haha-text-white-border.svg"
 
 function Header() {
-  return <header>
-      <h1>Random jokes</h1>
-  </header>;
+  return (
+    <header>
+      <div className="container">
+        <img src={Logo} alt="" />
+        <h1>Random jokes</h1>
+      </div>
+    </header>
+  );
 }
 
 export default Header;

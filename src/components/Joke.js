@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Axios from "axios";
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-dom";
+import LoadImg from "../images/SVG/spin_logo.svg";
 
 function Joke() {
   const [setup, setSetup] = useState("");
@@ -10,7 +10,11 @@ function Joke() {
     Axios.get(
       "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,racist,sexist&type=twopart"
     ).then((response) => {
-      setDelivery("");
+      setDelivery(
+        <div className="loading">
+          <img src={LoadImg} alt="" />
+        </div>
+      );
       setSetup("Q: " + response.data.setup);
 
       setTimeout(() => {
@@ -20,6 +24,9 @@ function Joke() {
       console.log(response.data);
     });
   };
+  console.log(setup);
+  console.log(delivery);
+
   return (
     <section>
       <button onClick={getJoke}>Get Joke!</button>
