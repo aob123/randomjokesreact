@@ -1,4 +1,4 @@
-import Logo from "../images/SVG/haha-text-white-border.svg"
+import Logo from "../images/PNG/haha-text-white-border.png"
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
         <img src={Logo} alt="" />
         <h1>Random jokes</h1>
       </div>
-    </header>
+    </header> 
   );
 }
 
